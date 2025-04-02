@@ -80,6 +80,7 @@ plt.show()
 |----------|-------------|---------|
 | `tokens` | Information about all supported tokens | `client.tokens.get(symbol="BTC,ETH")` |
 | `hourly_ohlcv` | Hourly price and volume data | `client.hourly_ohlcv.get(symbol="BTC", startDate="2023-10-01", endDate="2023-10-10")` |
+| `daily_ohlcv` | Daily price and volume data | `client.daily_ohlcv.get(symbol="BTC", startDate="2023-10-01", endDate="2023-10-10")` |
 | `investor_grades` | Long-term investment ratings | `client.investor_grades.get(symbol="BTC,ETH", startDate="2023-10-01", endDate="2023-10-10")` |
 | `trader_grades` | Short-term trading signals | `client.trader_grades.get(symbol="BTC,ETH", startDate="2023-10-01", endDate="2023-10-10")` |
 | `trader_indices` | AI-generated trading portfolios | `client.trader_indices.get(startDate="2023-10-01", endDate="2023-10-10")` |
