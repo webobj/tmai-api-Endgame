@@ -26,6 +26,22 @@ class TokenMetricsClient {
     const MarketMetricsEndpoint = require('./endpoints/market_metrics');
     const AIReportsEndpoint = require('./endpoints/ai_reports');
     
+    const InvestorIndicesEndpoint = require('./endpoints/investor_indices');
+    const CryptoInvestorsEndpoint = require('./endpoints/crypto_investors');
+    const TopMarketCapTokensEndpoint = require('./endpoints/top_market_cap_tokens');
+    const ResistanceSupportEndpoint = require('./endpoints/resistance_support');
+    const PriceEndpoint = require('./endpoints/price');
+    const SentimentEndpoint = require('./endpoints/sentiment');
+    const QuantmetricsEndpoint = require('./endpoints/quantmetrics');
+    const ScenarioAnalysisEndpoint = require('./endpoints/scenario_analysis');
+    const CorrelationEndpoint = require('./endpoints/correlation');
+    const IndexHoldingsEndpoint = require('./endpoints/index_holdings');
+    const SectorIndicesHoldingsEndpoint = require('./endpoints/sector_indices_holdings');
+    const IndicesPerformanceEndpoint = require('./endpoints/indices_performance');
+    const SectorIndicesPerformanceEndpoint = require('./endpoints/sector_indices_performance');
+    const IndexTransactionEndpoint = require('./endpoints/index_transaction');
+    const SectorIndexTransactionEndpoint = require('./endpoints/sector_index_transaction');
+    
     this.tokens = new TokensEndpoint(this);
     this.aiAgent = new AIAgentEndpoint(this);
     this.tradingSignals = new TradingSignalsEndpoint(this);
@@ -36,6 +52,22 @@ class TokenMetricsClient {
     this.traderIndices = new TraderIndicesEndpoint(this);
     this.marketMetrics = new MarketMetricsEndpoint(this);
     this.aiReports = new AIReportsEndpoint(this);
+    
+    this.investorIndices = new InvestorIndicesEndpoint(this);
+    this.cryptoInvestors = new CryptoInvestorsEndpoint(this);
+    this.topMarketCapTokens = new TopMarketCapTokensEndpoint(this);
+    this.resistanceSupport = new ResistanceSupportEndpoint(this);
+    this.price = new PriceEndpoint(this);
+    this.sentiment = new SentimentEndpoint(this);
+    this.quantmetrics = new QuantmetricsEndpoint(this);
+    this.scenarioAnalysis = new ScenarioAnalysisEndpoint(this);
+    this.correlation = new CorrelationEndpoint(this);
+    this.indexHoldings = new IndexHoldingsEndpoint(this);
+    this.sectorIndicesHoldings = new SectorIndicesHoldingsEndpoint(this);
+    this.indicesPerformance = new IndicesPerformanceEndpoint(this);
+    this.sectorIndicesPerformance = new SectorIndicesPerformanceEndpoint(this);
+    this.indexTransaction = new IndexTransactionEndpoint(this);
+    this.sectorIndexTransaction = new SectorIndexTransactionEndpoint(this);
   }
 }
 
