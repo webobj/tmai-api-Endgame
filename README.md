@@ -1,5 +1,7 @@
 # Token Metrics AI API JavaScript SDK
 
+[![npm version](https://badge.fury.io/js/tmai-api.svg)](https://www.npmjs.com/package/tmai-api)
+
 The official JavaScript SDK for Token Metrics AI API - providing professional investors and traders with comprehensive cryptocurrency analysis, AI-powered trading signals, market data, and advanced insights.
 
 ## Features
@@ -19,10 +21,12 @@ The official JavaScript SDK for Token Metrics AI API - providing professional in
 npm install tmai-api
 ```
 
+You can find the package on npm at: [tmai-api](https://www.npmjs.com/package/tmai-api)
+
 ## Quick Start
 
 ```javascript
-const { TokenMetricsClient } = require('tm-api-sdk-javascript');
+const { TokenMetricsClient } = require('tmai');
 
 // Initialize the client with your API key
 const client = new TokenMetricsClient('your-api-key');
