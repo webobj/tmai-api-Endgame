@@ -26,7 +26,7 @@ You can find the package on npm at: [tmai-api](https://www.npmjs.com/package/tma
 ## Quick Start
 
 ```javascript
-const { TokenMetricsClient } = require('tmai');
+const { TokenMetricsClient } = require('tmai-api');
 
 // Initialize the client with your API key
 const client = new TokenMetricsClient('your-api-key');
