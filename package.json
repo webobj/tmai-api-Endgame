@@ -1,5 +1,5 @@
 {
-  "name": "tm-api-sdk-javascript",
+  "name": "tmai-api",
   "version": "1.0.0",
   "description": "Token Metrics AI API JavaScript SDK - providing professional investors and traders with comprehensive cryptocurrency analysis, AI-powered trading signals, market data, and advanced insights.",
   "main": "src/index.js",

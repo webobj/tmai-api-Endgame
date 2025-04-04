@@ -16,7 +16,7 @@ The official JavaScript SDK for Token Metrics AI API - providing professional in
 ## Installation
 
 ```bash
-npm install tm-api-sdk-javascript
+npm install tmai-api
 ```
 
 ## Quick Start
