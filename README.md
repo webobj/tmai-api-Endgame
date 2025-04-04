@@ -72,6 +72,7 @@ async function getTokenData() {
 |----------|-------------|---------|
 | `tokens` | Information about all supported tokens | `client.tokens.get({ symbol: 'BTC,ETH' })` |
 | `hourlyOhlcv` | Hourly price and volume data | `client.hourlyOhlcv.get({ symbol: 'BTC', startDate: '2023-10-01', endDate: '2023-10-10' })` |
+| `dailyOhlcv` | Daily price and volume data | `client.dailyOhlcv.get({ symbol: 'BTC', startDate: '2023-10-01', endDate: '2023-10-10' })` |
 | `investorGrades` | Long-term investment ratings | `client.investorGrades.get({ symbol: 'BTC,ETH', startDate: '2023-10-01', endDate: '2023-10-10' })` |
 | `traderGrades` | Short-term trading signals | `client.traderGrades.get({ symbol: 'BTC,ETH', startDate: '2023-10-01', endDate: '2023-10-10' })` |
 | `traderIndices` | AI-generated trading portfolios | `client.traderIndices.get({ startDate: '2023-10-01', endDate: '2023-10-10' })` |
@@ -79,6 +80,21 @@ async function getTokenData() {
 | `aiAgent` | Interact with Token Metrics AI chatbot | `client.aiAgent.ask('What is your Bitcoin forecast?')` |
 | `aiReports` | AI-generated analysis reports | `client.aiReports.get({ symbol: 'BTC,ETH' })` |
 | `tradingSignals` | AI-generated trading signals | `client.tradingSignals.get({ symbol: 'BTC,ETH', startDate: '2023-10-01', endDate: '2023-10-10', signal: '1' })` |
+| `investorIndices` | AI-generated investor indices | `client.investorIndices.get({ startDate: '2023-10-01', endDate: '2023-10-10' })` |
+| `cryptoInvestors` | Information about crypto investors | `client.cryptoInvestors.get()` |
+| `topMarketCapTokens` | Top tokens by market capitalization | `client.topMarketCapTokens.get({ top_k: 100 })` |
+| `resistanceSupport` | Resistance and support levels | `client.resistanceSupport.get({ symbol: 'BTC' })` |
+| `price` | Historical price data | `client.price.get({ symbol: 'BTC', startDate: '2023-10-01', endDate: '2023-10-10' })` |
+| `sentiment` | Market sentiment data | `client.sentiment.get({ symbol: 'BTC', startDate: '2023-10-01', endDate: '2023-10-10' })` |
+| `quantmetrics` | Quantitative metrics | `client.quantmetrics.get({ symbol: 'BTC', startDate: '2023-10-01', endDate: '2023-10-10' })` |
+| `scenarioAnalysis` | Market scenario analysis | `client.scenarioAnalysis.get({ symbol: 'BTC' })` |
+| `correlation` | Asset correlation data | `client.correlation.get({ base_symbol: 'BTC', quote_symbol: 'ETH', startDate: '2023-10-01', endDate: '2023-10-10' })` |
+| `indexHoldings` | Index holdings data | `client.indexHoldings.get({ index_id: 'index_id' })` |
+| `sectorIndicesHoldings` | Sector indices holdings | `client.sectorIndicesHoldings.get({ index_id: 'index_id' })` |
+| `indicesPerformance` | Indices performance data | `client.indicesPerformance.get({ startDate: '2023-10-01', endDate: '2023-10-10' })` |
+| `sectorIndicesPerformance` | Sector indices performance | `client.sectorIndicesPerformance.get({ index_id: 'index_id', startDate: '2023-10-01', endDate: '2023-10-10' })` |
+| `indexTransaction` | Index transaction data | `client.indexTransaction.get({ index_id: 'index_id', startDate: '2023-10-01', endDate: '2023-10-10' })` |
+| `sectorIndexTransaction` | Sector index transaction data | `client.sectorIndexTransaction.get({ index_id: 'index_id', startDate: '2023-10-01', endDate: '2023-10-10' })` |
 
 ## Detailed Usage Examples
 
@@ -130,6 +146,69 @@ client.marketMetrics.get({
       date: m.DATE,
       value: m.FEAR_AND_GREED_VALUE
     })));
+  });
+```
+
+### Working with Price Data
+
+```javascript
+// Get historical price data for Bitcoin
+client.price.get({
+  symbol: 'BTC',
+  startDate: '2023-10-01',
+  endDate: '2023-10-10'
+})
+  .then(priceData => {
+    // Calculate average price
+    const avgPrice = priceData.data.reduce((sum, item) => sum + item.CLOSE, 0) / priceData.data.length;
+    
+    console.log(`Average BTC price: $${avgPrice.toFixed(2)}`);
+    console.log(`Price range: $${Math.min(...priceData.data.map(p => p.LOW))} - $${Math.max(...priceData.data.map(p => p.HIGH))}`);
+  });
+```
+
+### Analyzing Asset Correlation
+
+```javascript
+// Analyze correlation between Bitcoin and Ethereum
+client.correlation.get({
+  base_symbol: 'BTC',
+  quote_symbol: 'ETH',
+  startDate: '2023-10-01',
+  endDate: '2023-10-10'
+})
+  .then(correlation => {
+    // Get average correlation coefficient
+    const avgCorrelation = correlation.data.reduce((sum, item) => sum + item.CORRELATION, 0) / correlation.data.length;
+    
+    console.log(`Average BTC-ETH correlation: ${avgCorrelation.toFixed(2)}`);
+    console.log(`Correlation trend: ${avgCorrelation > 0.7 ? 'Strong positive' : avgCorrelation > 0.3 ? 'Moderate positive' : 'Weak'}`);
+  });
+```
+
+### Working with Investor Indices
+
+```javascript
+// Get investor indices data
+client.investorIndices.get({
+  startDate: '2023-10-01',
+  endDate: '2023-10-10'
+})
+  .then(indices => {
+    // Extract index names and performance
+    const indexSummary = indices.data.map(index => ({
+      name: index.INDEX_NAME,
+      id: index.INDEX_ID,
+      performance: index.PERFORMANCE
+    }));
+    
+    console.log('Investor Indices:', indexSummary);
+    
+    // Find best performing index
+    const bestIndex = indexSummary.reduce((best, current) => 
+      current.performance > best.performance ? current : best, indexSummary[0]);
+    
+    console.log(`Best performing index: ${bestIndex.name} (${bestIndex.performance.toFixed(2)}%)`);
   });
 ```
 

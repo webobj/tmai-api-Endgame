@@ -131,6 +131,21 @@ class BaseEndpoint {
       'market-metrics': 1000,
       'trader-indices': 1000,
       'trading-signals': 1000,
+      'investor-indices': 1000,
+      'crypto-investors': 1000,
+      'top-market-cap-tokens': 1000,
+      'resistance-support': 1000,
+      'price': 1000,
+      'sentiments': 1000,
+      'quantmetrics': 1000,
+      'scenario-analysis': 1000,
+      'correlation': 1000,
+      'index-holdings': 1000,
+      'sector-indices-holdings': 1000,
+      'indices-performance': 1000,
+      'index-specific-performance': 1000,
+      'indices-transaction': 1000,
+      'sector-index-transaction': 1000,
       'default': 1000
     };
 
