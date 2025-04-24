@@ -2,7 +2,8 @@
 
 ## Executive Summary
 
-Crypto-Whisperer is an innovative application for Masa's Subnet 42 that democratizes cryptocurrency 
+Crypto-Whisperer is an innovative application that leverage multiple external services like
+TokenMetrics API, Masa's Subnet 42 and Coinbase API to democratize cryptocurrency 
 trading by enabling users to access realtime data, complex market data and execute trades through 
 simple natural language commands. By leveraging Claude Desktop as the conversational interface and 
 Subnet 42's real-time decentralized data layer, Crypto-Whisperer eliminates technical barriers to 
