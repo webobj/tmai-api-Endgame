@@ -144,4 +144,4 @@ https://claude.ai/public/artifacts/89c4c1b4-f179-4dbd-b514-79aee55d4265
 
 ## Contact
 * Bin: `bin@yanezcompliance.com`
-* Sid: 
+* Sid: `siddartha.a31@gmail.com`
