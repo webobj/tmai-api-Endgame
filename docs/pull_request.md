@@ -1,10 +1,10 @@
-Pull Request Comment:
+## CryptoWhisperer
 
 CryptoWhisperer is a one-stop solution where you can research and purchase crypto. It marks a big leap forward on how
 we analyze and trade crypto - empowering seamless native actions right from the answer. It is crypto trading, but 10x the
 fun and educational decision-making.
 
-Here's what's new:
+## Here's what's new
 
 Discover the best crypto token: When you ask CryptoWhisperer, it gives a detailed
 analysis on the customer sentiment on the token and a trading signal or trends to decide if this is the right choice at that particular time.
@@ -18,5 +18,9 @@ Nature language trading: We've built a first-of-its kind AI crypto trading exper
    - Executes Buy/Sell/Swaps decisions based on natural language like "Buy BTC"
 
 We believe that this is the next generation of Agentic trading where wallet is built into the MCP clients.
- 
+
+## Demo
 Link to demo video: https://youtu.be/BsOn3KO99cQ
+
+## Readme
+https://github.com/zerolatent/crypto_whisperer/blob/main/README.md
